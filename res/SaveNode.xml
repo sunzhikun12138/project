@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Project name="TestProject" id="{123456}">
+    <Stage id="{001}" name="阶段1" startTime="2024.01.15 08:22:55" endTime="2024.01.16 08:22:55" index="1" />
+    <Stage id="{002}" name="阶段2" startTime="2024.01.13 12:42:37" endTime="2024.01.17 12:42:37" index="2" />
+</Project>
