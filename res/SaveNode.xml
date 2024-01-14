@@ -1,5 +1,6 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Project name="TestProject" id="{123456}">
-    <Stage id="{001}" name="阶段1" startTime="2024.01.15 08:22:55" endTime="2024.01.16 08:22:55" index="1" />
-    <Stage id="{002}" name="阶段2" startTime="2024.01.13 12:42:37" endTime="2024.01.17 12:42:37" index="2" />
+    <Stage id="{001}" name="阶段1" startTime="2024.01.12 01:12:00" endTime="2024.01.13 01:12:00" index="1"/>
+    <Stage id="{002}" name="阶段2" startTime="2024.01.14 09:07:12" endTime="2024.01.18 09:07:12" index="2"/>
+    <Stage id="{a11f94fc-5f46-4eef-bd3b-b23351548e75}" name="stage" startTime="2024.01.24 22:33:21" endTime="2024.01.28 22:33:21" index="3"/>
 </Project>

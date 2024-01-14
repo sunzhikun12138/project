@@ -1,6 +1,8 @@
 #include "CStageGraphicsScene.h"
 #include "CStageGraphicsItem.h"
 #include "CStageGraphicsLineItem.h"
+#include "CReadXmlFile.h"
+#include "CWriteXmlFile.h"
 #include <QDate>
 
 CStageGraphicsScene::CStageGraphicsScene(QGraphicsScene *parent)

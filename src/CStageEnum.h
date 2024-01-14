@@ -49,6 +49,7 @@ namespace CStageStruct
             endDateTime = QDateTime();
             nIndex = -1;
         }
+
         QString strUid;
         QString strStageName;
         QDateTime startDateTime;

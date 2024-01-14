@@ -63,6 +63,7 @@ void TestGraphicsItem::initWidget()
 
 void TestGraphicsItem::initData()
 {
+    CReadXmlFile::getInstance()->praseXmlFile();
     QVector<CStageStruct::CStageInfo> vecStageInfo = CReadXmlFile::getInstance()->getStageInfo();
     for(int i = 0;i<vecStageInfo.size();i++)
     {
@@ -92,8 +93,14 @@ void TestGraphicsItem::slotAddItem(QString strStageName,QDateTime startDateTime,
     stageInfo.strStageName = strStageName;
     stageInfo.startDateTime = startDateTime;
     stageInfo.endDateTime = endDateTime;
+    stageInfo.nIndex = m_pTreeWidget->topLevelItemCount();
     QTreeWidgetItem *pTreeItem = m_pTreeWidget->addStageItem(stageInfo);
     CStageGraphicsItem *pSceneItem = m_pStageScene->addStageItem2GraphicsScene(stageInfo);
+    //将新节点加入xml文件
+    CReadXmlFile::getInstance()->praseXmlFile();
+    QVector<CStageStruct::CStageInfo> vecStageInfo = CReadXmlFile::getInstance()->getStageInfo();
+    vecStageInfo.push_back(stageInfo);
+    CWriteXmlFile::getInstance()->saveStageInfos(vecStageInfo);
     QPair<QTreeWidgetItem*,CStageGraphicsItem*> pairTree2Scene = qMakePair(pTreeItem,pSceneItem);
     m_hashUid2Item.insert(stageInfo.strUid,pairTree2Scene);
     //QGraphicsItem *pItem = dynamic_cast<QGraphicsItem*>(pSceneItem);

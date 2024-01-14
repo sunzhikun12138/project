@@ -18,19 +18,19 @@ void CWriteXmlFile::saveStageInfos(QVector<CStageStruct::CStageInfo> vecStageinf
         return;
     }
     QXmlStreamWriter writer(&file);
-    writer.setAutoFormatting(false);
+    writer.setAutoFormatting(true);
     writer.writeStartDocument();
     writer.writeStartElement("Project");
-    writer.writeTextElement("name","TestProject");
-    writer.writeTextElement("id","{123456}");
+    writer.writeAttribute(QXmlStreamAttribute("name","TestProject"));
+    writer.writeAttribute(QXmlStreamAttribute("id","{123456}"));
     for(int i = 0;i<vecStageinfo.size();i++)
     {
         writer.writeStartElement("Stage");
-        writer.writeTextElement("id",vecStageinfo.at(i).strUid);
-        writer.writeTextElement("name",vecStageinfo.at(i).strStageName);
-        writer.writeTextElement("startTime",vecStageinfo.at(i).startDateTime.toString(DATETIMEFAMART));
-        writer.writeTextElement("endTime",vecStageinfo.at(i).endDateTime.toString(DATETIMEFAMART));
-        writer.writeTextElement("index",QString::number(vecStageinfo.at(i).nIndex));
+        writer.writeAttribute(QXmlStreamAttribute("id",vecStageinfo.at(i).strUid));
+        writer.writeAttribute(QXmlStreamAttribute("name",vecStageinfo.at(i).strStageName));
+        writer.writeAttribute(QXmlStreamAttribute("startTime",vecStageinfo.at(i).startDateTime.toString(DATETIMEFAMART)));
+        writer.writeAttribute(QXmlStreamAttribute("endTime",vecStageinfo.at(i).endDateTime.toString(DATETIMEFAMART)));
+        writer.writeAttribute(QXmlStreamAttribute("index",QString::number(vecStageinfo.at(i).nIndex)));
         writer.writeEndElement();
     }
     writer.writeEndElement();

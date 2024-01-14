@@ -16,11 +16,12 @@ QVector<CStageStruct::CStageInfo> CReadXmlFile::getStageInfo() const
 
 CReadXmlFile::CReadXmlFile():m_vecStageInfo(QVector<CStageStruct::CStageInfo>())
 {
-    praseXmlFile();
+
 }
 
 void CReadXmlFile::praseXmlFile()
 {
+    m_vecStageInfo.clear();
     QFile file("../res/SaveNode.xml");
     if(!file.open(QIODevice::ReadOnly | QIODevice::Text))
     {

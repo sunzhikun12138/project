@@ -8,10 +8,10 @@ class CReadXmlFile
 {
 public:
     static CReadXmlFile *getInstance();
+    void praseXmlFile();
     QVector<CStageStruct::CStageInfo> getStageInfo() const;
 private:
     CReadXmlFile();
-    void praseXmlFile();
 private:
     QVector<CStageStruct::CStageInfo> m_vecStageInfo;
 };

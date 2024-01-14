@@ -11,6 +11,7 @@ public:
 private:
     //根据坐标值获取时间
     QDateTime getTimeByPointF(QPointF point);
+    void updateXml(QDateTime startTime,QDateTime endTime);
 protected:
     virtual QRectF boundingRect() const;
     virtual void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget = nullptr);
@@ -18,7 +19,7 @@ protected:
 private:
     CStageStruct::CStageInfo m_stageInfo;
     QRectF m_location;
-    QPointF m_point;//坐标原点
+    QPointF m_point;
 };
 
 #endif // CSTAGEGRAPHICSITEM_H
